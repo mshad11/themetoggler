@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
+import { Themecontext } from './Themeprovider';
+import { Context } from './Themeprovider';
 function App() {
+  //const context = React.useContext(Themecontext)
+  const {toggle, toggleFunction} = Context()
+  console.log(toggle)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    // <div> my name is {context} </div>
+   <div className='theme-changer' style={{backgroundColor: toggle ? 'black' : 'white' }}>
+   <h1>Context API</h1>
+   <button onClick={toggleFunction}>ThemeChanger</button>
+
+
+   </div>
+
   );
 }
 
